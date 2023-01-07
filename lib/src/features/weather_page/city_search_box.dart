@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:open_weather_example_flutter/src/constants/app_colors.dart';
 
 final cityProvider = StateProvider<String>((ref) {
-  return 'London';
+  return 'Seoul'; // 초기화면에 도시이름
 });
 
 class CitySearchBox extends ConsumerStatefulWidget {

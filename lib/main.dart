@@ -31,12 +31,12 @@ class MyApp extends StatelessWidget {
           headline4: textStyleWithShadow,
           headline5: textStyleWithShadow,
           subtitle1: const TextStyle(color: Colors.white),
-          bodyText2: const TextStyle(color: Colors.white),
-          bodyText1: const TextStyle(color: Colors.white),
-          caption: const TextStyle(color: Colors.white70, fontSize: 13),
+          bodyText2: const TextStyle(color: Colors.white), //최고,최저
+          bodyText1: const TextStyle(color: Colors.white), //요일 기온
+          caption: const TextStyle(color: Colors.white70, fontSize: 13), //요일
         ),
       ),
-      home: const WeatherPage(city: 'London'),
+      home: const WeatherPage(city: 'Seoul'),
     );
   }
 }
