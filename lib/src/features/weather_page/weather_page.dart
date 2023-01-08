@@ -26,6 +26,8 @@ class WeatherPage extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: const [
               Spacer(),
+              Text('지역을 검색하십시오',style: TextStyle(fontSize: 40)), // 검색할 도시
+              Spacer(), // 배치
               CitySearchBox(),
               Spacer(),
               CurrentWeather(),

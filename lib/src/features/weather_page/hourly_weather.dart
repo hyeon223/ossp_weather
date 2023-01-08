@@ -64,7 +64,7 @@ class HourlyWeatherItem extends ConsumerWidget {
           const SizedBox(height: 8),
           Text(
             '$temp°',
-            style: textTheme.bodyText1!.copyWith(fontWeight: fontWeight),
+            style: textTheme.bodyText2!.copyWith(fontWeight: fontWeight),
           ),
         ],
       ),

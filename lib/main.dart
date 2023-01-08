@@ -30,9 +30,10 @@ class MyApp extends StatelessWidget {
           headline3: textStyleWithShadow,
           headline4: textStyleWithShadow,
           headline5: textStyleWithShadow,
+
           subtitle1: const TextStyle(color: Colors.white),
           bodyText2: const TextStyle(color: Colors.white), //최고,최저
-          bodyText1: const TextStyle(color: Colors.white), //요일 기온
+          bodyText1: const TextStyle(color: Colors.black), //요일
           caption: const TextStyle(color: Colors.white70, fontSize: 13), //요일
         ),
       ),

@@ -71,7 +71,7 @@ class _CitySearchRowState extends ConsumerState<CitySearchBox> {
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: Text('search',
+                child: Text('검색',
                     style: Theme.of(context).textTheme.bodyText1),
               ),
             ),
