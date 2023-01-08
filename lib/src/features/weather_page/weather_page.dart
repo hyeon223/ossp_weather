@@ -24,13 +24,15 @@ class WeatherPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
-            children: const [
+            children:  [
               Spacer(),
               Text('지역을 검색하십시오',style: TextStyle(fontSize: 40)), // 검색할 도시
               Spacer(), // 배치
               CitySearchBox(),
               Spacer(),
               CurrentWeather(),
+              Spacer(),
+              ElevatedButton(onPressed: (){}, child: Text('추천')), // 1. 정보를 얻을 수 있는 버튼
               Spacer(),
               HourlyWeather(),
               Spacer(),
