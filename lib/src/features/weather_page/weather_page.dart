@@ -11,6 +11,34 @@ class WeatherPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
+    void _show_weather(){
+      showDialog(
+          context: context,
+          builder: (BuildContext){
+            return AlertDialog(
+              title: Text("기온별 정보 전체보기"),
+              content: SingleChildScrollView(
+                child: ListBody(
+                  children: [
+                    Text('정보를 제공함'),
+                  ],
+                ),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: (){
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('OK'),
+                )
+              ],
+            );
+          });
+    }
+
+
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -33,9 +61,19 @@ class WeatherPage extends StatelessWidget {
               Spacer(),
               CurrentWeather(),
               Spacer(),
-              ElevatedButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => style_info_button()),);},
-                  child: Text('추천')), // 1. 정보를 얻을 수 있는 버튼
+
+              ElevatedButton(
+                  onPressed: _show_weather,
+                  //Navigator.push(context, MaterialPageRoute(builder: (context) => style_info_button(txt: "test",)),);},
+                  child: Text('기온별 정보 전체보기')), // 1. 정보를 얻을 수 있는 버튼
+
+              Spacer(),
+
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.push
+                      (context, MaterialPageRoute(builder: (context) => style_info_button(txt: "데이터 받아와서 처리")),);},
+                  child: Text('추천 정보')), // 2. 추천 정보 페이지 넘기기
               Spacer(),
               HourlyWeather(),
               Spacer(),
