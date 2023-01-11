@@ -26,8 +26,8 @@ class CurrentWeather extends ConsumerWidget {
 }
 
 class CurrentWeatherContents extends ConsumerWidget {
-  const CurrentWeatherContents({Key? key, required this.data})
-      : super(key: key);
+  const CurrentWeatherContents({Key? key, required this.data}) : super(key: key);
+
   final WeatherData data;
 
   @override
@@ -44,6 +44,44 @@ class CurrentWeatherContents extends ConsumerWidget {
         WeatherIconImage(iconUrl: data.iconUrl, size: 120), // 날씨 아이콘 정보
         Text(temp, style: textTheme.headline2), // 온도 정보
         Text(highAndLow, style: textTheme.bodyText2), //최고,최저 기온 정보
+      ],
+    );
+  }
+}
+
+
+// 온도 정보를 받아오는 클래스, (구현할 부분)
+class Current_temp extends ConsumerWidget {
+  const Current_temp({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final weatherDataValue = ref.watch(currentWeatherControllerProvider);
+    final city = ref.watch(cityProvider);
+    return
+        weatherDataValue.when(
+          data: (weatherData) => c_t(data: weatherData),
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, __) => Text(e.toString()),
+        );
+  }
+}
+
+class c_t extends ConsumerWidget {
+  const c_t({Key? key, required this.data}) : super(key: key);
+
+  final WeatherData data;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final textTheme = Theme.of(context).textTheme;
+
+    final temp = data.temp.celsius.toInt().toString();
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text('온도정보를 받아옴'),
+        Text(temp, style: textTheme.headline2), // 온도 정보
       ],
     );
   }

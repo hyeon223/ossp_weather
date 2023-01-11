@@ -60,15 +60,14 @@ class WeatherPage extends StatelessWidget {
               CitySearchBox(), // 날씨검색바
               Spacer(),
               CurrentWeather(), // 현재 날씨 정보 -> current_wether.dart 참고
-              Spacer(),
 
+
+              Spacer(),
               ElevatedButton(
                   onPressed: _show_weather,
                   //Navigator.push(context, MaterialPageRoute(builder: (context) => style_info_button(txt: "test",)),);},
                   child: Text('기온별 정보 전체보기')), // 1. 정보를 얻을 수 있는 버튼
-
               Spacer(),
-
               ElevatedButton(
                   onPressed: (){
                     Navigator.push
