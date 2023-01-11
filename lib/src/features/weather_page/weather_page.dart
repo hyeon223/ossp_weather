@@ -57,9 +57,9 @@ class WeatherPage extends StatelessWidget {
               Spacer(),
               Text('지역을 검색하십시오',style: TextStyle(fontSize: 40)), // 검색할 도시
               Spacer(), // 배치
-              CitySearchBox(),
+              CitySearchBox(), // 날씨검색바
               Spacer(),
-              CurrentWeather(),
+              CurrentWeather(), // 현재 날씨 정보 -> current_wether.dart 참고
               Spacer(),
 
               ElevatedButton(
@@ -75,7 +75,7 @@ class WeatherPage extends StatelessWidget {
                       (context, MaterialPageRoute(builder: (context) => style_info_button(txt: "데이터 받아와서 처리")),);},
                   child: Text('추천 정보')), // 2. 추천 정보 페이지 넘기기
               Spacer(),
-              HourlyWeather(),
+              HourlyWeather(), // 5일간 기상예보
               Spacer(),
             ],
           ),
