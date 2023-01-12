@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:open_weather_example_flutter/src/features/weather_page/current_weather.dart';
 
 class style_info_button extends StatefulWidget {
-  var txt = "";
+  var txt = '';
   style_info_button({Key? key, required this.txt}) : super(key: key);
 
   @override
